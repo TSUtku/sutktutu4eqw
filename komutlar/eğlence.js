@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
       .setThumbnail(client.user.avatarURL)
       .addField('`espri`,`eyaz`, `ailemiz`, `koş`, `karat`, `tokatat`, `lafsok`')
       .addField('`çıkma-teklifi-et`,`avatar`, `aşkölçer`, `mcödül`, `köpek-resmi`, `zar-at`')
-      .addField('`gol-at`,``,``,``,``,``')
+      .addField('`gol-at`,`sansli-sayim`,``,``,``,``')
       .setFooter(``, client.user.avatarURL)
       .setTimestamp()
     message.channel.send(juke).catch()
