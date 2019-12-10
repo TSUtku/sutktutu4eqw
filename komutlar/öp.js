@@ -33,7 +33,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'öp',
-  description: 'Bu komut ile istediğiniz kişiye öpersin!',
-  usage: 'öp <@kullanıcı'
+  name: "öp",
+  description: "Bu komut ile istediğiniz kişiye öpersin!",
+  usage: "öp <@kullanıcı>"
 };
