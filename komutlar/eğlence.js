@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
     .setAuthor(`Botadı`, client.user.avatarURL) 
       .setDescription('**[Website]() [destek sunucumuz]() [oyver]()**')
 .setThumbnail(client.user.avatarURL)
-      .addField('`!espri: Güzel Espriler Yapar.`,`!eyaz: Yazdığınız Yazıyı Embed Yazı Biçimine Çevirir.`, `!ailemiz: Botun Olduğu Sunucuları ve Sunuculardaki Olan Kişileri Gösterir.`, ``, ``, ``, ``, ``, ``, ``, ``, ``, ``, ``')
+      .addField('`!espri: Güzel Espriler Yapar.`,`!eyaz: Yazdığınız Yazıyı Embed Yazı Biçimine Çevirir.`, `!ailemiz: Botun Olduğu Sunucuları ve Sunuculardaki Olan Kişileri Gösterir.`, `!koş: Koşarsınız.`, `!karat: Etiketlediğiniz Kişiye Kar Topu Atarsınız.`, `tokatat: Etiketlediğiniz Kişiye Tokat Atarsınız!`, ``, ``, ``, ``, ``, ``, ``, ``')
       .addField('``,``, ``, ``, ``, ``')
  
     .setFooter(``, client.user.avatarURL)
