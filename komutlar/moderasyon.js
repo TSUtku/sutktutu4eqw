@@ -8,12 +8,12 @@ exports.run = (client, message, args) => {
       .setAuthor(`Botadı`, client.user.avatarURL) 
       .setDescription('**[Website]() [destek sunucumuz]() [oyver]()**')
       .setThumbnail(client.user.avatarURL)
-      .addField('`!ban`,`!bankaldır`, `!banlimit`, `!bansorgulama`')
-      .addField('`!ust`, `!uyar`, `!uyarı-kaldır`,`!uyarı-sayı`,`!reklamtaraması`, `!yavaş-mod`')
-      .addField(' `!güvenlik`, `!güvenlik-sıfırla`, `!sunucu-koruma`, `!giriş-izni`')
-      .setFooter(``, client.user.avatarURL)
-      .setTimestamp()
-      .message.channel.send(juke).catch()
+      .addField('`ban`,`bankaldır`,`banlimit`,`bansorgulama`')
+      .addField('`ust`,`uyar`,`uyarı-kaldır`,`uyarı-sayı`,`!reklamtaraması`,`!yavaş-mod`')
+      .addField(' `güvenlik`,`güvenlik-sıfırla`,`sunucu-koruma`,`giriş-izni`')
+  .setFooter(``, client.user.avatarURL)
+    .setTimestamp()
+    message.channel.send(juke).catch()
 
 };
 
