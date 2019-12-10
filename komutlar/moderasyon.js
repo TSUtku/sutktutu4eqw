@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
     .setAuthor(`Botadı`, client.user.avatarURL) 
       .setDescription('**[Website]() [destek sunucumuz]() [oyver]()**')
 .setThumbnail(client.user.avatarURL)
-      .addField('`!espri: Güzel Espriler Yapar.`,`!eyaz: Yazdığınız Yazıyı Embed Yazı Biçimine Çevirir.`, `!ailemiz: Botun Olduğu Sunucuları ve Sunuculardaki Olan Kişileri Gösterir.`, ``, ``, ``, ``, ``, ``, ``, ``, ``, ``, ``')
+      .addField('`!ban : Etiketlediğiniz kişiye sunucudan yasaklar.`,`!bankaldır : Etiketlediğiniz kişinin banını kaldırır.`, `!banlimit : Sunucunuzda Ban limiti belirlediğinizde o sayıdan sonra ban atan kişinin rollerini alır.`, `!bansorgulama : etiketlediğiniz kişinin ban nedenini at`, ``, ``, ``, ``, ``, ``, ``, ``, ``, ``')
       .addField('``,``, ``, ``, ``, ``')
  
     .setFooter(``, client.user.avatarURL)
@@ -25,7 +25,7 @@ exports.conf = {
 };
 
 exports.help = {
-    name: 'eğlence',
-      category: 'eğlence',
-      description: 'eğlence komutlarını gösteir.',
+    name: 'moderasyon',
+      category: 'moderasyon',
+      description: 'moderasyon komutlarını gösteir.',
 };
