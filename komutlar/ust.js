@@ -28,6 +28,6 @@ exports.conf = {
 
 exports.help = {
   name: 'ust',
-  description: 'bot!',
-  usage: ''
+  description: 'Bot mesajlarını siler.',
+  usage: '!ust aç kapat'
 };

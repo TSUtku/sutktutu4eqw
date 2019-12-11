@@ -30,6 +30,6 @@ exports.conf = {
 
 exports.help = {
   name: 'çıkma-teklifi-et',
-  description: 'Özel komut.',
+  description: 'etiketlediğiniz kişiyiye çıkma teklifi edersiniz.',
   usage: 'çıkma-teklifi-et'
 };

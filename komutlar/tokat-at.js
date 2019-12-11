@@ -14,7 +14,7 @@ exports.run = function(client, message, args) {
     return message.channel.send(oldur);
 
 };
-//Codelib 
+
 exports.conf = {
   enabled: true,
   guildOnly: true,

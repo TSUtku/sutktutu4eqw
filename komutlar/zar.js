@@ -17,6 +17,6 @@ exports.conf = {
 
 exports.help = {
   name: 'zar-at',
-  description: 'Zar atar.',
+  description: 'Zar atarsın.',
   usage: 'zar-at',
 };

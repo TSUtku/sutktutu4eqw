@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
     const juke = new Discord.RichEmbed()
       .setColor('BLUE')
       .setAuthor(`Botadı`, client.user.avatarURL) 
-      .setDescription('**!yardım Komut ismi yazarak komutların ne işe yaradığını bulabilirsiniz.**')
+      .setDescription('**!yardımkomut  Komut ismi yazarak komutların ne işe yaradığını bulabilirsiniz.**')
       .setThumbnail(client.user.avatarURL)
       .addField('**:fire: **','`ban`,`bankaldır`,`banlimit`,`bansorgulama`')
       .addField('**:fire: **','`ust`,`uyar`,`uyarı-kaldır`,`uyarı-sayı`,`!reklamtaraması`,`!yavaş-mod`')
