@@ -30,7 +30,7 @@ aliases: ['embed-yaz'],
 permLevel: 0
 }
 exports.help = {
-  name:"eyaz",
+  name:"embedyaz",
   description: "Yazılan Yazıyı Embed Olarak Gösterir.",
-  usage: "eyaz"
+  usage: "emdedyaz yazı"
 }

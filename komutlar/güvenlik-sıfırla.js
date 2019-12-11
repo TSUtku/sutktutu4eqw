@@ -28,5 +28,5 @@ exports.conf = {
 exports.help = {
     name: "güvenlik-sıfırla",
     descripton: "güvenlik kanalını sıfırlarsınız",
-    usage: "!güvenlik-sıfırla"
+    usage: "güvenlik-sıfırla"
 }
