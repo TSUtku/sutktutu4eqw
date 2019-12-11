@@ -56,5 +56,5 @@ exports.conf = {
 exports.help = {
     name: 'mod-log-ayarla',
     description: 'mod log kanalını ayarlarsınız.',
-    usage: '!mod-log-ayarla #kanal'
+    usage: 'mod-log-ayarla #kanal'
 }
