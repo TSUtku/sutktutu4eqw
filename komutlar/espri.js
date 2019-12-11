@@ -25,6 +25,6 @@ exports.conf = {
 
 exports.help = {
   name: 'espri',
-  description: 'Eğlence Komutudur! Espri',
+  description: 'espri yapar.',
   usage: 'espri'
 };

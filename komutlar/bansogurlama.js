@@ -25,6 +25,6 @@ exports.conf = {
 
 exports.help = {
     name: 'bansorgulama',
-    description: 'Ban sorgulama yaparsınız',
+    description: 'banlanan birisinin ban sebebini atar.',
     usage: 'bansorgulama'
 };

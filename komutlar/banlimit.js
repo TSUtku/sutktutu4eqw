@@ -23,7 +23,7 @@ exports.conf = {
 
 exports.help = {
   name: 'banlimit',
-  description: 'Ban limiti.',
-  usage: 'banlimit',
+  description: 'banlimiti koyar koyduğunuz limiti geçen kişilerin tüm yetkisini alır.',
+  usage: '!banlimit Sayı',
   kategori: 'yetkili'
 };

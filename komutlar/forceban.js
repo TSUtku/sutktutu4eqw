@@ -27,6 +27,6 @@ exports.conf = {
 exports.help = {
 	name: 'forceban',
 	category: '',
-	description: '',
+	description: 'id ile ban atarsınız',
 	usage: 'forceban '
 };
