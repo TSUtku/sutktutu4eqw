@@ -151,4 +151,226 @@ client.on("guildBanAdd", async(guild, user) => {
     }
 })
 
+////güvenlik
+client.on('guildMemberAdd',async member => {
+  let user = client.users.get(member.id);
+  let kanal = client.channels.get(db.fetch(`güvenlik_${member.guild.id}`)) 
+       const Canvas = require('canvas')
+       const canvas = Canvas.createCanvas(360,100);
+       const ctx = canvas.getContext('2d');
+  
+  const resim1 = await Canvas.loadImage('https://cdn.discordapp.com/attachments/612020865684602904/631235167268241449/gvnlk-spheli.png')
+    const resim2 = await Canvas.loadImage('https://cdn.discordapp.com/attachments/597433546868654106/627427731407241226/gvnlk-gvnli.png')
+    const kurulus = new Date().getTime() - user.createdAt.getTime();
+    const gün = moment(kurulus).format('dddd');  
+    var kontrol;
+      if (kurulus > 2629800000) kontrol = resim2
+    if (kurulus < 2629800000) kontrol = resim1
+
+       const background = await Canvas.loadImage('https://cdn.discordapp.com/attachments/597433546868654106/627425996454232064/gvnlk-arka.png');
+       ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+   
+
+  const avatar = await Canvas.loadImage(member.user.displayAvatarURL);
+  ctx.drawImage(kontrol,0,0,canvas.width, canvas.height)
+  ctx.beginPath();
+    ctx.lineWidth = 4;
+  ctx.fill()
+    ctx.lineWidth = 4;
+  ctx.arc(180, 46, 36, 0, 2 * Math.PI);
+    ctx.clip();
+  ctx.drawImage(avatar, 143,10, 73, 72  );
+
+   
+       const attachment = new Discord.Attachment(canvas.toBuffer(), 'güvenlik.png');
+    kanal.send(attachment)
+});
+
+///////////////////////anti raid
+
+client.on("guildMemberAdd", async member => {
+if (db.has(`botkoruma_${member.guild.id}`) === false) return;
+if (member.user.bot === false) return;
+if (db.has(`botİzinli_${member.id}`) === true) return;
+
+member.kick(member, `Bot koruması aktif!`)
+
+member.guild.owner.send(`Sunucunuza bir bot eklendi ve sunucudan otomatik olarak atıldı, sunucuya eklenmesini onaylıyor iseniz \`!giriş-izni ${member.id}\``)
+})
+
+client.on("message", msg => {
+  let küfürEngel = db.fetch(`ke_${msg.guild.id}`)
+  if (!msg.guild) return
+  if (küfürEngel === 'kapali') return
+    if (küfürEngel === 'acik') {
+   
+    var request = require('request');
+request(`https://endlesslove-apii.glitch.me/kufur`, function (error, response, body) {
+    if (error) return console.log('Hata:', error);
+    else if (!error) {
+        var veri = JSON.parse(body);
+      if (veri.kelimeler.some(word => msg.content.toLowerCase().includes(word)) ) {
+    if (!msg.member.hasPermission("ADMINISTRATOR")) {
+      msg.delete()
+       msg.channel.send(new Discord.RichEmbed().setColor('#000000').setDescription('Bu Sunucudu Küfür-engelleme filitresi açık. küfür edemezsin!!')).then(message => message.delete(3000));
+    
+    }}
+    }
+})}});
+client.on("message", msg => {
+  let reklam = db.fetch(`ke_${msg.guild.id}`)
+  if (!msg.guild) return
+  if (reklam === 'kapali') return
+    if (reklam === 'acik') {
+   
+    var request = require('request');
+request(`https://endlesslove-apii.glitch.me/reklam`, function (error, response, body) {
+    if (error) return console.log('Hata:', error);
+    else if (!error) {
+        var veri = JSON.parse(body);
+      if (veri.kelimeler.some(word => msg.content.toLowerCase().includes(word)) ) {
+    if (!msg.member.hasPermission("ADMINISTRATOR")) {
+      msg.delete()
+       msg.channel.send(new Discord.RichEmbed().setColor('#000000').setDescription('bu sunucuda reklam engelleme filitresi açık. reklam yapamazsın')).then(message => message.delete(3000));
+    
+    }}
+    }
+})}});
+////sayaç
+client.on("guildMemberAdd", async member => {
+  let kanal = await db.fetch(`sskanal_${member.guild.id}`)
+   if(!kanal) return
+  let sayaç = await db.fetch(`ssayı_${member.guild.id}`)
+  let hgmsj = await db.fetch(`sayachgmsj_${member.guild.id}`)
+  let bbmsj = await db.fetch(`sayacbbmsj_${member.guild.id}`)
+  let sonuç = sayaç - member.guild.memberCount
+  ///....
+  
+ 
+  ///....
+   if(!hgmsj) {
+client.channels.get(kanal).send(':loudspeaker: :inbox_tray: Kullanıcı Katıldı! `'+sayaç+'` Kişi Olmamıza `'+sonuç+'` Kişi Kaldı `'+member.guild.memberCount+'` Kişiyiz! `'+member.user.username+'`')
+   }
+
+
+  if(hgmsj) {
+ var mesajs = await db.fetch(`sayachgmsj_${member.guild.id}`).replace("-uye-", `${member.user.tag}`).replace("-server-",  `${member.guild.name}`).replace("-uyesayisi-", `${member.guild.memberCount}`).replace("-botsayisi-",  `${member.guild.members.filter(m => m.user.bot).size}`).replace("-bolge-", `${member.guild.region}`).replace("-kanalsayisi-",  `${member.guild.channels.size}`).replace("-kalanuye-", `${sonuç}`).replace("-hedefuye-", `${sayaç}`)         
+  
+ client.channels.get(kanal.id).send(mesajs) 
+ return
+ }
+ 
+    
+
+  
+  
+  
+  })
+client.on("guildMemberRemove", async member => {
+  let kanal = await db.fetch(`skanal_${member.guild.id}`)
+  let sayaç = await db.fetch(`ssayı_${member.guild.id}`)
+  let hgmsj = await db.fetch(`sayachgmsj_${member.guild.id}`)
+  let bbmsj = await db.fetch(`sayacbbmsj_${member.guild.id}`)
+  let sonuç = sayaç - member.guild.memberCount
+  ///....
+  
+  if(!kanal) return
+  if(!sayaç) return
+  if(member.bot) return
+  ///....
+  
+  if(!bbmsj) {
+    client.channels.get(kanal).send(':loudspeaker: :outbox_tray: Kullanıcı Ayrıldı. `'+sayaç+'` Kişi Olmamıza `'+sonuç+'` Kişi Kaldı `'+member.guild.memberCount+'` Kişiyiz!  `'+member.user.username+'`')
+  return
+  }
+  
+  if(bbmsj) {
+ var mesajs = await db.fetch(`sayacbbmsj_${member.guild.id}`).replace("-uye-", `${member.user.tag}`).replace("-server-",  `${member.guild.name}`).replace("-uyesayisi-", `${member.guild.memberCount}`).replace("-botsayisi-",  `${member.guild.members.filter(m => m.user.bot).size}`).replace("-bolge-", `${member.guild.region}`).replace("-kanalsayisi-",  `${member.guild.channels.size}`).replace("-kalanuye-", `${sonuç}`).replace("-hedefuye-", `${sayaç}`)         
+  
+ client.channels.get(kanal).send(mesajs) 
+ }
+  
+  
+  
+  })
+
+/// LEVEL BOT.JS ///
+
+client.on("message", async message => {
+  let prefix = ayarlar.prefix;
+
+  var id = message.author.id;
+  var gid = message.guild.id;
+
+  let hm = await db.fetch(`seviyeacik_${gid}`);
+  let kanal = await db.fetch(`svlog_${gid}`);
+  let xps = await db.fetch(`verilecekxp_${gid}`);
+  let seviyerol = await db.fetch(`svrol_${gid}`);
+  let rollvl = await db.fetch(`rollevel_${gid}`);
+
+  if (!hm) return;
+  if (message.content.startsWith(prefix)) return;
+  if (message.author.bot) return;
+
+  var xp = await db.fetch(`xp_${id}_${gid}`);
+  var lvl = await db.fetch(`lvl_${id}_${gid}`);
+  var xpToLvl = await db.fetch(`xpToLvl_${id}_${gid}`);
+
+  if (!lvl) {
+  
+    if (xps) {
+      db.set(`xp_${id}_${gid}`, xps);
+    }
+    db.set(`xp_${id}_${gid}`, 4);
+    db.set(`lvl_${id}_${gid}`, 1);
+    db.set(`xpToLvl_${id}_${gid}`, 100);
+  } else {
+    if (xps) {
+      db.add(`xp_${id}_${gid}`, xps);
+    }
+    db.add(`xp_${id}_${gid}`, 4);
+
+    if (xp > xpToLvl) {
+      db.add(`lvl_${id}_${gid}`, 1);
+      db.add(
+        `xpToLvl_${id}_${gid}`,
+        (await db.fetch(`lvl_${id}_${gid}`)) * 100
+      );
+      if (kanal) {
+        client.channels
+          .get(kanal.id)
+          .send(
+            message.member.user.username +
+              "** Seviye Atladı! Yeni seviyesi; `" +
+              lvl +
+              "` Tebrikler! :tada: **"
+          );
+
+  
+      }
+ 
+    }
+
+    if (seviyerol) {
+      if (lvl >= rollvl) {
+        message.guild.member(message.author.id).addRole(seviyerol);
+        if (kanal) {
+          client.channels
+            .get(kanal.id)
+            .send(
+              message.member.user.username +
+                "** Seviyesi **" +
+                rollvl +
+                "** e ulaştı ve " +
+                seviyerol +
+                " Rolünü kazandı! :tada: **"
+            );
+        }
+      }
+    }
+  }
+
+
+});
+
 client.login(ayarlar.token);
