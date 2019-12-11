@@ -49,6 +49,6 @@ exports.conf = {
 
 exports.help = {
   name: 'seviye-rol',
-  description: 'taslak', 
+  description: 'seviye ödül rolunu ayarlarsınız.', 
   usage: 'seviye-rol'
 };

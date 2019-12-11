@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
       .setDescription('**!yardımkomut  Komut ismi yazarak komutların ne işe yaradığını bulabilirsiniz.**')
       .setThumbnail(client.user.avatarURL)
       .addField('**:fire: **','`ban`,`bankaldır`,`banlimit`,`bansorgulama`,`reklamengel`,`sayaçyardım`')
-      .addField('**:fire: **','`ust`,`uyar`,`uyarı-kaldır`,`uyarı-sayı`,`!reklamtaraması`,`!yavaş-mod`')
+      .addField('**:fire: **','`ust`,`uyar`,`uyarı-kaldır`,`uyarı-sayı`,`!reklamtaraması`,`!yavaş-mod`,`seviyeyardım`')
       .addField('**:fire: **',' `güvenlik`,`güvenlik-sıfırla`,`sunucu-koruma`,`giriş-izni`,`küfürengel`')
     
   .setFooter(``, client.user.avatarURL)
