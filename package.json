@@ -51,7 +51,6 @@
     "url": "^0.11.0",
     "useful-tools": "^0.0.35",
     "weather-js": "^2.0.0",
-    "ytdl-core": "^0.28.3",
     "dblapi.js": "^2.3.0",
     "gifencoder": "^2.0.0",
     "array-sort": "^1.0.0",
@@ -71,9 +70,11 @@
     "discord-anti-spam": "^1.1.6",
     "jimp": "^0.6.0",
     "discord-anti-spam-tr": "^0.7.4",
-       "quick.db": "^7.0.0-b22",
+    "quick.db": "^7.0.0-b22",
     "google-tts-api": "^0.0.4",
-    "parse-ms": "^2.0.0"
+    "parse-ms": "^2.0.0",
+    "parse-time": "^0.1.4",
+    "ytdl-core": "^1.0.3"
   },
   "engines": {
     "node": "8.x"
