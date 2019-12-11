@@ -9,6 +9,7 @@ const lembed = new Discord.RichEmbed()
 .addField("!genel","genel komutlarını atar.")
 .addField("!ekstra","ekstra komutları atar.")
 .addField("!müzik","müzik komutlarını atar.")
+.setDescription("genel ve ekstra komutları bakımda")
 message.channel.sendEmbed(lembed)
 .then; 
 

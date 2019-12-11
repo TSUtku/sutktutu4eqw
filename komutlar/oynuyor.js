@@ -1,11 +1,10 @@
-
 const Discord = require("discord.js");
 
 module.exports.run = async (client,message,args) => {
     
-
-    if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(":no_entry: Yeterli yetkiniz yok");
-{
+var SAHİP = message.guild.members.find("id", "636666776972820490","444919402543054848","611624362277077012","639430589493018644");
+if(message.member !== SAHİP)return message.channel.send("Bu komutu kullanmak için uygun izniniz yok.");
+if(SAHİP) {
       let args = message.content.split(' ').slice(1).join(" ");
     if (!args) return message.channel.send(" Lütfen oynuyor `yazısını` yazınız.")
 client.user.setActivity(args);
@@ -18,11 +17,11 @@ module.exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
-  permLevel: 2
+  permLevel: 0
 };
 
 module.exports.help = {
-  name: 'oynuyorsahip',
-  description: 'botun oynuyor kısmını değiştirirsiniz',
+  name: 'oynuyor',
+  description: '',
   usage: '!oynuyor'
 };
