@@ -32,6 +32,6 @@ exports.conf = {
 
 exports.help = {
   name: 'kartopu',
-  description: '',
-  usage: 'kartopu'
+  description: 'kartopu atarsınız',
+  usage: 'kartopu @kullanıcı'
 }; 

@@ -22,5 +22,7 @@ exports.conf = {
 };
 
 exports.help = {
-	name: "güvenlik"
+	name: "güvenlik",
+  descripton: "Yeni hesap açan kullanıcıları belirlediğiniz kanala atar.",
+  usage: "!güvenlik #kanal"
 }

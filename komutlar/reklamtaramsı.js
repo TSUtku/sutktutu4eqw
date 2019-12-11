@@ -25,5 +25,5 @@ exports.help = {
     name: 'reklam-taraması',
   category: 'moderasyon',
     description: 'Kullanıcıların Oynuyor mesajındaki ve Kullanıcı adlarındaki reklamları tarar.',
-    usage: 'reklam-taraması'
+    usage: '!reklam-taraması'
 } 

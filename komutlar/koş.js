@@ -29,6 +29,6 @@ exports.conf = {
 
 exports.help = {
   name: 'koş',
-  description: 'Koşarak Manitana',
+  description: 'koşarsınız',
   usage: 'koş'
 };
