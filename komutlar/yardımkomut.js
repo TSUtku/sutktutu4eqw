@@ -28,7 +28,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'yardım1',
+  name: 'yardımkomut',
   description: 'Komut kategorilerini gösterir.',
   usage: 'yardım'
 };
