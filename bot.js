@@ -26,7 +26,7 @@ const fs = require('fs');
 const moment = require('moment');
 const Jimp = require('jimp');
 const db = require('quick.db');
-
+client.queue = new Map()
 require('./util/eventLoader')(client);
 
 var prefix = ayarlar.prefix;
