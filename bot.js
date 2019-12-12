@@ -298,7 +298,7 @@ client.on("guildMemberRemove", async member => {
 
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
-const youtube = new YouTube('AIzaSyC2sq2C8X3tp5sqTVQF965akMNLl75EdFI');
+const youtube = new YouTube(ayarlar.api);
 const queue = new Map();
 
 client.on('message', async msg => {
