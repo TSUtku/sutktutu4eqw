@@ -3,12 +3,12 @@ const Discord = require ("discord.js");
 exports.run = (client, message) => {
 const lembed = new Discord.RichEmbed()
 .setColor("#5ab1bb")
-.setTitle("Bot adı")
-.addField("!moderasyon","Moderasyon komutlarını atar.")
-.addField("!eğlence","eğlence komutlarını atar.")
-.addField("!genel","genel komutlarını atar.")
-.addField("!ekstra","ekstra komutları atar.")
-.addField("!müzik","müzik komutlarını atar.")
+.setTitle("Nemesis")
+.addField(":robot: !moderasyon","Moderasyon komutlarını atar.")
+.addField(":robot: !eğlence","eğlence komutlarını atar.")
+.addField(":robot: !genel","genel komutlarını atar.")
+.addField(":robot: !kullanıcı","ekstra komutları atar.")
+
 .setDescription("genel ve ekstra komutları bakımda")
 message.channel.sendEmbed(lembed)
 .then; 
