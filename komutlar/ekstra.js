@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
     .setDescription('**!yardımkomut  Komut ismi yazarak komutların ne işe yaradığını bulabilirsiniz.**')
       .setThumbnail(client.user.avatarURL)
       .addField('**🔥 **','`davet`,`istatislik`, `sunucular` ')
-      .addField('**🔥 **','`ailemiz`,`davet-oluştur` ')
+      .addField('**🔥 **','`ailemiz`,`davet-oluştur`,`saat`,`endlesslove` ')
        .setFooter(``, client.user.avatarURL)
       .setTimestamp()
     message.channel.send(juke).catch()
