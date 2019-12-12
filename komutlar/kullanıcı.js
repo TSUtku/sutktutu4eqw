@@ -5,10 +5,10 @@ exports.run = (client, message, args) => {
   
       const juke = new Discord.RichEmbed()
       .setColor('BLUE')
-      .setAuthor(`Botadı`, client.user.avatarURL) 
+      .setAuthor(`Nemesis`, client.user.avatarURL) 
     .setDescription('**!yardımkomut  Komut ismi yazarak komutların ne işe yaradığını bulabilirsiniz.**')
       .setThumbnail(client.user.avatarURL)
-      .addField('**:busts_in_silhouette: **','`öneri`,`havadurumu`, `stemfiyat` ')
+      .addField('**:busts_in_silhouette: **','`öneri`,`havadurumu`, `steamfiyat` ')
       .addField('**:busts_in_silhouette: **','`sunucubilgi`,`sunucuresmi`,`kullanıcıbilgim`,`yetkilerim` ')
        .setFooter(``, client.user.avatarURL)
       .setTimestamp()
@@ -24,7 +24,7 @@ exports.conf = {
 };
 
 exports.help = {
-    name: 'ekstra',
-      usage: 'ekstra',
-      description: 'ekstra komutlarını gösteir.',
+    name: 'kullanıcı',
+      usage: 'kullanıcı',
+      description: 'Kullanıcı komutlarını gösteir.',
 };
