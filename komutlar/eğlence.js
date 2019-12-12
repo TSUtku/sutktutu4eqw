@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
       .setAuthor(`Botadı`, client.user.avatarURL) 
     .setDescription('**!yardımkomut  Komut ismi yazarak komutların ne işe yaradığını bulabilirsiniz.**')
       .setThumbnail(client.user.avatarURL)
-      .addField('**:fire: **','`espri`,`eyaz`, `ailemiz`, `koş`, `karat`, `tokatat`, `lafsok`')
+      .addField('**:fire: **','`espri`,`eyaz`, `koş`, `karat`, `tokatat`, `lafsok`')
       .addField('**:fire: **','`çıkma-teklifi-et`,`avatar`, `aşkölçer`, `mcödül`,`zar-at`')
       .addField('**:fire: **','`gol-at`,`sansli-sayim`,`öp`')
       .setFooter(``, client.user.avatarURL)
