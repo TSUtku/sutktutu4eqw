@@ -7,7 +7,7 @@ exports.run = async (bot, message, args) => {
    const istatistikler = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setFooter('bot ismi Team\'s', bot.user.avatarURL)
-  .addField("» :spy: Botun Sahibleri", "<@636666776972820490> <@639430589493018644> <@611624362277077012> <@444919402543054848>")
+  .addField("» :spy: Botun Sahibleri", "<@636666776972820490> <@639430589493018644> <@611624362277077012>")
   .addField(':desktop: Bellek kullanımı:', (process.memoryUsage().heapUsed / 2048 / 2048).toFixed(2)) 
   .addField("» Çalışma süresi", seksizaman)
   .addField("» Kullanıcılar", bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString(), true)

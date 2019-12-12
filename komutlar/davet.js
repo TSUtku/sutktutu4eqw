@@ -7,11 +7,11 @@ exports.run = (client, message) => {
   .setTitle("Beni sunucuna davet etmek için tıkla.")
     .setAuthor(message.author.username, message.author.avatarURL)
   .setColor("RANDOM")
-  .setDescription("**Bot yapımıcılari:** <@636666776972820490> <@639430589493018644> <@611624362277077012> <@444919402543054848>")
+  .setDescription("**Bot yapımıcılari:** <@636666776972820490> <@639430589493018644> <@611624362277077012> ")
   .setFooter('Takım : | Endlesslove ekibi | ', client.user.avatarURL)
   .setThumbnail("")
   .setTimestamp()
-  .addField("» Linkler", `[Davet Linki](https://discordapp.com/oauth2/authorize?client_id=654061697606090752&scope=bot&permissions=8)`+ "**\n**"+`[Destek Sunucusu]( https://discord.gg/fw3nNEK)`, false)
+  .addField("» Linkler", `[Davet Et](https://discordapp.com/oauth2/authorize?client_id=654061697606090752&scope=bot&permissions=8)`+ "**\n**"+`[Destek Sunucusu]( https://discord.gg/fw3nNEK)`, false)
   .setURL(' ')
       .setThumbnail(client.user.avatarURL);
 
