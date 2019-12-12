@@ -16,10 +16,10 @@ exports.run = async (bot, message, args) => {
   .addField("» Discord.JS sürüm", "v"+Discord.version, true)
   .addField(`» Node.JS sürüm`, `${process.version}`, true)
   .addField("» Ping", bot.ping+" ms", true)
-  .addField(':book: Kütüphanesi;', `Discord.js - Discord.py - Discord-Commando`)
-  .addField("**❯ Bot Davet**", " [Davet Et](https://discordapp.com/oauth2/authorize?client_id=654061697606090752&scope=bot&permissions=805314750)", )
-  .addField("**❯ Destek Sunucusu**", " [Sunucumuza Katıl](https://discord.gg/2Rnq6Rg)", )
-  .addField(':paperclip: Botun Başlanma Zamanı:', "Bot **15.08.2018**'de yapılmaya başlanmıştır")
+  .addField(':book: Kütüphanesi;', `Discord.js`)
+  .addField("**❯ Bot Davet**", " [Davet Et](https://discordapp.com/oauth2/authorize?client_id=654061697606090752&scope=bot&permissions=8)", )
+  .addField("**❯ Destek Sunucusu**", " [Sunucumuza Katıl](https://discord.gg/fw3nNEK)", )
+
   return message.channel.send(istatistikler);
   };
 

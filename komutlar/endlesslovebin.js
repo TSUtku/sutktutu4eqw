@@ -17,6 +17,6 @@ exports.conf = {
 
 exports.help = {
   name: 'endlesslovebin',
-  description: 'İstediğiniz Yazıyı Hastebine Yükler.',
-  usage: 'hastebin'
+  description: 'İstediğiniz Yazıyı endlesslove ye Yükler.',
+  usage: 'endlesslove'
 };
