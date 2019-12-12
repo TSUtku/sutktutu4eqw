@@ -8,9 +8,9 @@ exports.run = (client, message, args) => {
       .setAuthor(`Nemesis`, client.user.avatarURL) 
       .setDescription('**!yardımkomut  Komut ismi yazarak komutların ne işe yaradığını bulabilirsiniz.**')
       .setThumbnail(client.user.avatarURL)
-      .addField('**:fire: **','`ban`,`bankaldır`,`banlimit`,`bansorgulama`,`reklamengel`,`sayaçyardım`')
+      .addField('**:fire: **','`ban`,`bankaldır`,`banlimit`,`bansorgulama`,`reklamengel`,`sayaçyardım`,`otorolyardım`,`ototagkanal`,`ototag`')
       .addField('**:fire: **','`ust`,`ustkapat`,`uyar`,`uyarı-kaldır`,`uyarı-sayı`,`!reklamtaraması`,`!yavaş-mod`,`seviyeyardım`')
-      .addField('**:fire: **',' `güvenlik`,`güvenlik-sıfırla`,`sunucu-koruma`,`giriş-izni`,`küfürengel`,`hgbbkanalayarla`')
+      .addField('**:fire: **',' `güvenlik`,`güvenlik-sıfırla`,`sunucu-koruma`,`giriş-izni`,`küfürengel`,`hgbbkanalayarla`,`prefix-ayarla`')
     
   .setFooter(``, client.user.avatarURL)
     .setTimestamp()

@@ -13,7 +13,7 @@ module.exports = client => {
         "💪 7/24 Aktif!",
         "🌍 Yapımcım: EndlessLove Ekibi",
         "💡!davet | Botumuzu davet edin" ,
-       
+       "Yeni komutlar!!",
       
     
     ];

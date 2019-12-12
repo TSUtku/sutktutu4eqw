@@ -8,7 +8,7 @@ module.exports = member => {
    .setThumbnail(member.user.avatarURL || member.user.defaultAvatarURL)
    .setTitle('Üye Ayrıldı;')
    .setDescription(`Sunucudan ayrıldı [${member.guild.memberCount} üye]!`)
-   .setFooter('')
+   .setFooter('Nemesis')
    .setTimestamp()
    channel.send(embed);
 };

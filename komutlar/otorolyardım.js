@@ -11,9 +11,9 @@ exports.run = async (client, message, params, args) => {
   .setColor(0x36393E)
       .setAuthor(`Nemesis Bot Otorol Komutları`, client.user.avatarURL)
       .setThumbnail(client.user.avatarURL)
-.addField("<a:f1:637967475530530816>| Otorol Ayarlamak İçin !oto-rol-ayarla @rol #kanal| <a:f1:637967475530530816>")
-.addField("<a:f1:637967475530530816>| Otorol Kapat|<a:f1:637967475530530816>", "Otorol Kapatmak İçin Bunu Yazın `!oto-rol-kapat`")
-.addField("<a:f1:637967475530530816>| !oto-rol-msg 》 Otorol Mesajını Ayarlar. |<a:f1:637967475530530816> ", "Örnek: `!oto-rol-msg -server-, Sunucumuza Hoşgeldin, -uye-! -rol- Adlı Rolün Başarı İle Verildi Seninle Beraber, **-uyesayisi-** Kişiyiz.`")
+.addField("<a:fire:654816925486022687>| Otorol Ayarlamak İçin !oto-rol-ayarla @rol #kanal| <a:fire:654816925486022687>")
+.addField("<a:fire:654816925486022687>| Otorol Kapat|<a:fire:654816925486022687">"", "Otorol Kapatmak İçin Bunu Yazın `!oto-rol-kapat`")
+.addField("<a:fire:654816925486022687>| !oto-rol-msg 》 Otorol Mesajını Ayarlar. |<a:fire:654816925486022687> ", "Örnek: `!oto-rol-msg -server-, Sunucumuza Hoşgeldin, -uye-! -rol- Adlı Rolün Başarı İle Verildi Seninle Beraber, **-uyesayisi-** Kişiyiz.`")
 
             
 

@@ -4,5 +4,5 @@ module.exports = client => {
   client.on('message', reqEvent('message'));
 client.on('guildMemberAdd', reqEvent('giriş'));
   client.on('guildMemberRemove', reqEvent('çıkış'));
-
+client.on('guildMemberAdd', reqEvent('otoTag'));
 };
