@@ -1,7 +1,7 @@
 //consts (for glitch)
 // GEREKLİ YERLER
 
-q express = require('express');
+const express = require('express');
 const app = express();
 const http = require('http');
     app.get("/", (request, response) => {
