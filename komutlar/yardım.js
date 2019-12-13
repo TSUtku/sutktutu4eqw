@@ -6,7 +6,7 @@ const lembed = new Discord.RichEmbed()
 .setTitle("Nemesis")
 .addField(":robot: !moderasyon","Moderasyon komutlarını atar.")
 .addField(":robot: !eğlence","eğlence komutlarını atar.")
-
+.addField(":robot: !ekstra : ekstra komutları gösterir.")
 .addField(":robot: !kullanıcı","ekstra komutları atar.")
 
 .setDescription("genel ve ekstra komutları bakımda")
