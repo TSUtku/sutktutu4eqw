@@ -14,6 +14,7 @@ module.exports = client => {
         "🌍 Yapımcım: EndlessLove Ekibi",
         "💡!davet | Botumuzu davet edin" ,
        "Yeni komutlar!!",
+         "!prefix Ayarlanabilir prefix!!",
       
     
     ];
