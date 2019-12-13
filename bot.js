@@ -127,6 +127,8 @@ client.on('warn', e => {
 client.on('error', e => {
   console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
+
+
 ///bankoruma
 client.on("guildBanAdd", async(guild, user) => {
   const entry = await guild.fetchAuditLogs({type: 'MEMBER_BAN_ADD'}).then(audit => audit.entries.first())
