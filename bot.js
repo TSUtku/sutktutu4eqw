@@ -452,7 +452,7 @@ if(mesaj) {
 });
 ////kayıt
 client.on('guildMemberAdd', (member) => {
-    const db = require('endlesslove.db'); 
+    const db = require('quick.db'); 
 
          const channelss = db.fetch(`kkanal_${member.guild.id}`).replace("<#", "").replace(">", "")
 
@@ -478,6 +478,24 @@ client.on('guildMemberAdd', (member) => {
   });
 
 
-
+////davet
+const invites = {};
+     client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
+  });
+    
+  client.on("guildMemberAdd", async member => {
+    let memberChannel = await db.fetch(`davettakip_${member.guild.id}`)
+    if (!member.guild.channels.get(memberChannel)) return console.log('memberChannel')
+         member.guild.fetchInvites().then(guildInvites => {
+    const ei = invites[member.guild.id];
+    invites[member.guild.id] = guildInvites;
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    member.guild.channels.get(memberChannel).send(`**${member.user.tag}** Katıldı davet eden: **${inviter.tag}** Daveti kullanan kişi sayısı: **${invite.uses}**`);
+  });
+})
 
 client.login(ayarlar.token);
