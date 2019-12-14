@@ -497,5 +497,18 @@ const invites = {};
     member.guild.channels.get(memberChannel).send(`**${member.user.tag}** Katıldı davet eden: **${inviter.tag}** Daveti kullanan kişi sayısı: **${invite.uses}**`);
   });
 })
-
+/////özel komut
+client.on('message', async msg => {
+  let ozelkomut = await db.fetch(`sunucuKomut_${msg.guild.id}`);
+  let ozelkomutYazi;
+  if (ozelkomut == null) ozelkomutYazi = 'Burayı silme yoksa hatalı olur'
+  else ozelkomutYazi = ''+ ozelkomut +''
+  if (msg.content.toLowerCase() === `${ozelkomutYazi}`) {
+      let mesaj = await db.fetch(`sunucuMesaj_${msg.guild.id}`);
+  let mesajYazi;
+  if (mesaj == null) mesajYazi = 'Burayı silme yoksa hatalı olur'
+  else mesajYazi = ''+ mesaj +''
+    msg.channel.send(mesajYazi)
+  }
+});
 client.login(ayarlar.token);
