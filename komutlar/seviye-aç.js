@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const db = require('quick.db')
 exports.run = async(client, message, args) => { 
   
-    if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:iptal:626445972620443648> Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.`);
+    if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`:x: Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.`);
   
  
   let hm = await db.fetch(`seviyeacik_${message.guild.id}`)
