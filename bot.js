@@ -450,53 +450,9 @@ if(mesaj) {
 }  
   
 });
-////kayıt
-client.on('guildMemberAdd', (member) => {
-    const db = require('quick.db'); 
-
-         const channelss = db.fetch(`kkanal_${member.guild.id}`).replace("<#", "").replace(">", "")
-
-       const kayıts = db.fetch(`ksistem_${member.guild.id}`)
-             if (kayıts == undefined) {
-             }
-            if (kayıts == 'acik') {
-             
-                          member.guild.channels.forEach(async (channel, id) => {
-                await channel.overwritePermissions(member, {
-                    VIEW_CHANNEL: false
-                });
-            });
-                          
-                 member.guild.channels.get(channelss).overwritePermissions(member, {
-                    SEND_MESSAGES: true,
-                    VIEW_CHANNEL: true
-                });
-            
-            }
-
-        
-  });
 
 
-////davet
-const invites = {};
-     client.guilds.forEach(g => {
-    g.fetchInvites().then(guildInvites => {
-      invites[g.id] = guildInvites;
-    });
-  });
-    
-  client.on("guildMemberAdd", async member => {
-    let memberChannel = await db.fetch(`davettakip_${member.guild.id}`)
-    if (!member.guild.channels.get(memberChannel)) return console.log('memberChannel')
-         member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    invites[member.guild.id] = guildInvites;
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    member.guild.channels.get(memberChannel).send(`**${member.user.tag}** Katıldı davet eden: **${inviter.tag}** Daveti kullanan kişi sayısı: **${invite.uses}**`);
-  });
-})
+
 /////özel komut
 client.on('message', async msg => {
   let ozelkomut = await db.fetch(`sunucuKomut_${msg.guild.id}`);
@@ -511,4 +467,62 @@ client.on('message', async msg => {
     msg.channel.send(mesajYazi)
   }
 });
+
+/////////////////////////////////////////////////////////////davet
+
+const invites = {};
+
+
+const wait = require('util').promisify(setTimeout);
+
+client.on('ready', () => {
+
+  wait(1000);
+
+
+  client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
+  });
+});
+
+
+client.on('guildMemberAdd', member => {
+  
+  
+ 
+  member.guild.fetchInvites().then(guildInvites => {
+    
+    if (db.has(`dKanal_${member.guild.id}`) === false) return
+    const channel = db.fetch(`dKanal_${member.guild.id}`).replace("<#", "").replace(">", "")
+    
+    const ei = invites[member.guild.id];
+  
+    invites[member.guild.id] = guildInvites;
+ 
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+
+    const davetçi = client.users.get(invite.inviter.id);
+     db.add(`davet_${invite.inviter.id + member.guild.id}`,1)
+let bal  = db.fetch(`davet_${invite.inviter.id + member.guild.id}`)
+   member.guild.channels.get(channel).send(`:inbox_tray: ** <@${member.id}> Joined**; İnvited by **${davetçi.tag}** (`+'**'+bal+'** invites)')
+  })
+
+
+});
+client.on("guildMemberRemove", async member => {
+
+    member.guild.fetchInvites().then(guildInvites => {
+
+      const ei = invites[member.guild.id];
+  
+    invites[member.guild.id] = guildInvites;
+ 
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+
+       db.subtract(`davet_${invite.inviter.id + member.guild.id}`,1)
+    })
+})
+
 client.login(ayarlar.token);
