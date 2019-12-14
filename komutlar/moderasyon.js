@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
       .setThumbnail(client.user.avatarURL)
       .addField('**:fire: **','`ban`,`bankaldır`,`banlimit`,`bansorgulama`,`reklamengel`,`sayaçyardım`,`otorolyardım`,`ototagkanal`,`ototag`')
       .addField('**:fire: **','`ust`,`ustkapat`,`uyar`,`uyarı-kaldır`,`uyarı-sayı`,`!reklamtaraması`,`!yavaş-mod`,`seviyeyardım`,`kayıtyardım`')
-      .addField('**:fire: **',' `güvenlik`,`güvenlik-sıfırla`,`sunucu-koruma`,`giriş-izni`,`küfürengel`,`hgbbkanalayarla`,`prefix`')
+      .addField('**:fire: **',' `güvenlik`,`güvenlik-sıfırla`,`sunucu-koruma`,`giriş-izni`,`küfürengel`,`hgbbkanalayarla`,`prefix`,`temizle`')
     
   .setFooter(``, client.user.avatarURL)
     .setTimestamp()
