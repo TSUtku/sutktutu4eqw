@@ -450,7 +450,32 @@ if(mesaj) {
 }  
   
 });
-////ototag
+////kayıt
+client.on('guildMemberAdd', (member) => {
+    const db = require('endlesslove.db'); 
+
+         const channelss = db.fetch(`kkanal_${member.guild.id}`).replace("<#", "").replace(">", "")
+
+       const kayıts = db.fetch(`ksistem_${member.guild.id}`)
+             if (kayıts == undefined) {
+             }
+            if (kayıts == 'acik') {
+             
+                          member.guild.channels.forEach(async (channel, id) => {
+                await channel.overwritePermissions(member, {
+                    VIEW_CHANNEL: false
+                });
+            });
+                          
+                 member.guild.channels.get(channelss).overwritePermissions(member, {
+                    SEND_MESSAGES: true,
+                    VIEW_CHANNEL: true
+                });
+            
+            }
+
+        
+  });
 
 
 
