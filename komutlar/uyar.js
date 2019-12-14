@@ -8,7 +8,7 @@ if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(`⛔ 
   if (!endlesslove) return message.channel.send('❓ Kullanıcıyı bulamadım.') 
   let eendlesslove = message.guild.member(endlesslove)
   if (!endlesslove) return message.channel.send('❓ Kullanıcıyı **bulamadım.**')
-  if (endlesslove.hasPermission("MANAGE_MESSAGES")) return message.channel.send('🖕 Bu kişi **yetkili!**') 
+
   if (!Yasin) return message.reply('⛔ Uyarı sebebini yazmalısın.').catch(console.error); 
   message.channel.send(` ⚠️ **${endlesslove.tag}** adlı kullanıcıyı uyarmak istediğinize **emin misiniz?** Lütfen **evet (e)** veya **hayır (h)** ile cevap verin.\n\n\`30\` saniye içerisinde iptal edilcektir.`) 
   let uwu = false; 
