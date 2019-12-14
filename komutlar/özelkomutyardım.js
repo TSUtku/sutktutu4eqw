@@ -1,0 +1,31 @@
+const Discord = require('discord.js');
+
+
+exports.run = function(client, message) {
+const embed = new Discord.RichEmbed()
+.setColor('BLUE')
+.setTitle('Özel Komut')
+.setTimestamp()
+.setDescription('!yardımkomut komutismi yazarak komutların ne işe yaradığını bulabilirsiniz')
+.addField('!özel-komut-ekle','özel komut eklersiniz. örnek: kullanıcı: sa bot: as')
+.addField('!kayıtkanal','kayıt kanalını ayarlarsınız kayıt-ol komutu sadece orda çalışır.')
+.addField('!kayıt-rol-ayarla','kayıt-ol komutunu kullanınıca verilecek rol')
+.addField('!kayıt-ol','kayıt olma komutu kayıtsistemi açık değilken kullanılmaz.')
+.setFooter('2019 Nemesis Özel komut Sistemi.')
+.setTimestamp()
+.setThumbnail(client.user.avatarURL)
+message.channel.send(embed)
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false, 
+  aliases: [], 
+  permLevel: 0 
+};
+
+exports.help = {
+  name: 'kayıtyardım',
+  description: 'kayıt komutlarını gösterir.',
+  usage: 'kayıtyardım'
+};
