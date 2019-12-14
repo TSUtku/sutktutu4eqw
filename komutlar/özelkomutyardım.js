@@ -25,7 +25,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'kayıtyardım',
-  description: 'kayıt komutlarını gösterir.',
-  usage: 'kayıtyardım'
+  name: 'özelkomutyardım',
+  description: 'Özelkomutkomutlarını gösterir.',
+  usage: 'özelkomutyardım'
 };
