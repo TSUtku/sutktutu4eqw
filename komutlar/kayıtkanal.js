@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const fs = require('fs');
-  const db = require('endlesslove.db');
+  const db = require('quick.db');
 
 exports.run = async (client, message, args) => {
     let kullanıcı = await db.fetch(`ksistem_${message.guild.id}`);

@@ -7,7 +7,7 @@ exports.run = async (client, message) => {
   
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu komutu kullanabilmek için **Yönetici** iznine sahip olmalısın!`);
 
-  const db = require('endlesslove.db');
+  const db = require('quick.db');
   
 
   
@@ -23,7 +23,7 @@ exports.run = async (client, message) => {
         
     var i = db.set(`ksistem_${message.guild.id}`, "acik")
     
-        message.channel.send(("!", "") + `${i.replace("acik", "Kayıt Sistemi Komutları Artık Kullanılabilir ve Kayıt Kullanıcıları için Oda Açılmıştır.")}`)
+        message.channel.send(("!", "") + `${i.replace("acik", "Kayıt Sistemi Komutları Artık Kullanılabilir.")}`)
     
  
     };

@@ -1,31 +1,52 @@
 const Discord = require('discord.js');
+module.exports.run = async (client, msg, args) => {
+  const db = require('quick.db')
+  let kullanıcı = await db.fetch(`ksistem_${msg.guild.id}`);
 
+  if( kullanıcı == undefined){
+msg.reply("**Kayıt komutları kapalı açmak için !kayıtsistemi aç**")
+  }else{
+      if( kullanıcı == "acik"){
+    let kayıt = msg.author
 
-exports.run = function(client, message) {
-const embed = new Discord.RichEmbed()
-.setColor('Blue')
-.setTitle('Kayıt Sistemi')
-.setTimestamp()
-.setDescripton('!yardımkomut komutismi yazarak komutların ne işe yaradığını bulabilirsiniz')
-.addField('!kayıtsistemi','kayıt sistemini açar veya kapatırsınız..')
-.addField('!kayıtkanal','kayıt kanalını ayarlarsınız kayıt-ol komutu sadece orda çalışır.')
-.addField('!kayıt-rol-ayarla','kayıt-ol komutunu kullanınıca verilecek rol')
-.addField('!kayıt-ol','kayıt olma komutu kayıtsistemi açık değilken kullanılmaz.')
-.setFooter('2019 Nemesis Kayıt Sistemi.')
-.setTimestamp()
-.setThumbnail(client.user.avatarURL)
-message.channel.send(embed)
-};
+         const kanal = db.fetch(`kkanal_${msg.guild.id}`).replace("<#", "").replace(">", "")
 
+         const channelss = db.fetch(`kkanal_${msg.guild.id}`).replace("<#", "").replace(">", "")
+
+  if (msg.channel.id !== kanal) return msg.channel.send(`Bu komutu sadece <#${kanal}> kanalında kullanabilirsin.`).then(msg => msg.delete(10000))
+    if (msg.channel.id == kanal) {
+                              msg.guild.channels.forEach(async (channel, id) => {
+                await channel.overwritePermissions(msg.author, {
+                    VIEW_CHANNEL: true
+                });
+            });
+                          
+                 msg.guild.channels.get(channelss).overwritePermissions(msg.author, {
+                    VIEW_CHANNEL: false
+                });
+                   const rol = db.fetch(`krol_${msg.guild.id}`)
+            msg.member.addRole(rol)
+    msg.channel.send({
+        embed: {
+            color: Math.floor(Math.random() * (0xFFFFFF + 1)),
+            description: ("Tebrikler kayıt oldunuz, yönlendiriliyorsunuz bekleyin.")
+        }
+    
+                     
+    })
+      }
+  }
+}
+}
 exports.conf = {
-  enabled: true,
-  guildOnly: false, 
-  aliases: [], 
-  permLevel: 0 
+    enabled: true,
+    guildOnly: true,
+    aliases: ['kayıt','kayıtol'],
+    permLevel: 0
 };
 
 exports.help = {
-  name: 'kayıtyardım',
-  description: 'Tüm komutları gösterir.',
-  usage: 'yardım'
+    name: 'kayıt-ol',
+    description: 'Sunucuya kayıt olursunuz!',
+    usage: 'kayıt-ol'
 };

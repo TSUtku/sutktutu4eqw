@@ -5,7 +5,7 @@ if (message.channel.type !== "text") return;
 const limit = args[0] ? args[0] : 0;
   if(!limit) {
               var embed = new Discord.RichEmbed()
-                .setDescription(`Doğru kullanım: \`cb!yavaş-mod [0/10]\``)
+                .setDescription(`Doğru kullanım: \`!yavaş-mod [0/10]\``)
                 .setColor('RANDOM')
                 .setTimestamp()
             message.channel.send({embed})
