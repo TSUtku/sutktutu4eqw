@@ -4,7 +4,7 @@ module.exports.run = async (client, msg, args) => {
   let kullanıcı = await db.fetch(`ksistem_${msg.guild.id}`);
 
   if( kullanıcı == undefined){
-msg.reply("**Kayıt komutları kapalı açmak için !kayıtsistemi aç**")
+
   }else{
       if( kullanıcı == "acik"){
     let kayıt = msg.author
