@@ -1,3 +1,20 @@
+
+
+const Discord = require('discord.js');
+const ayarlar = require('../ayarlar.json');
+const db = require("quick.db")
+
+
+
+let g = await db.fetch(`pre_${message.guild.id})`)
+if(!g) return message.reply("gold değilsin yaprak")
+if(g === "acik") {
+
+//komut buraya
+}
+})
+  
+  
 const db = require('quick.db')
 const Discord = require('discord.js')
 
@@ -28,4 +45,19 @@ exports.help = {
   name: 'ust',
   description: 'Botun pingini gösterir.',
   usage: ''
+};
+  
+}
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'ust',
+  description: 'Tüm komutları gösterir.',
+  usage: 'yardım [komut]'
 };
