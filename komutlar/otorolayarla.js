@@ -8,7 +8,7 @@ let kanal = message.mentions.channels.first()
   
 if(!rol) return message.channel.send(`<a:x:654818016717963291> Ayarlamam İçin Bir Rol Etiketlemeilisin. 
 <a:red:636287232990248971> Rolü Etiketleyemiyorsan **Rolün Etiketleme Seçeneğini Aktif Etmeyi Unutma**
-<a:red:636287232990248971> Örnek Kullanım : s!otorol @rol #kanal 
+<a:red:636287232990248971> Örnek Kullanım : !otorol @rol #kanal 
 
  Önemli Not!!: Oto Rol Vermem İçin Verilecek Rolün Üstünde Bir Rolüm Olmalı Yoksa Rolü Veremem :)`)  
  if(!kanal) return message.channel.send(':octagonal_sign:  Ayarlamam İçin Bir Kanal Etiketlemeilisin.')
