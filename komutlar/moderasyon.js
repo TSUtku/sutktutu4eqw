@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
 .setTitle('prefix !')
       .setThumbnail(client.user.avatarURL)
       .addField('**:fire: **','`ban`,`bankaldır`,`banlimit`,`bansorgulama`,`reklamengel`,`sayaçyardım`,`otorolyardım`,`ototagkanal`,`ototag`,`davet-takip`')
-      .addField('**:fire: **','`ust`,`ustkapat`,`uyar`,`uyarı-kaldır`,`uyarı-sayı`,`!reklamtaraması`,`!yavaş-mod`,`seviyeyardım`,`kayıtyardım`,`kanalkoruma`,`kanalkoruma-log`,`kanalkoruma-rol`')
+      .addField('**:fire: **','`ust`,`ustkapat`,`uyar`,`uyarı-kaldır`,`uyarı-sayı`,`!reklamtaraması`,`!yavaş-mod`,`seviyeyardım`,`kayıtyardım')
       .addField('**:fire: **',' `güvenlik`,`güvenlik-sıfırla`,`sunucu-koruma`,`giriş-izni`,`küfürengel`,`prefix`,`temizle`,`özelkomutyardım`')
     
   .setFooter(``, client.user.avatarURL)
