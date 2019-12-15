@@ -6,14 +6,14 @@ exports.run = async (client, message,args) => {
 let kanalkorumadb = await db.fetch(`kanalkoruma${message.guild.id}`)
 
 
-const cfxkoruma = new Discord.RichEmbed()
+const nmskoruma = new Discord.RichEmbed()
 .setColor("#00ff88")
 .setTitle(`**\`Kanal Koruma Bilgi;\`**`)
 .setDescription(`** ** \n**Açmak İçin:** \`${a.prefix}\`kanalkoruma aç\n\n **Kapatmak İçin:** \`${a.prefix}kanalkoruma kapat\``)
 .setFooter(`Nemesis | Kanal Koruma Sistemi.`, client.user.avatarURL)
 
 
-if (!args[0]) return message.channel.send(cfxkoruma);
+if (!args[0]) return message.channel.send(nmskoruma);
 if (args[0] == 'aç') {
 if (kanalkorumadb === 'Açık') {
 message.channel.send('Kanal Koruması Zaten Aktif!')

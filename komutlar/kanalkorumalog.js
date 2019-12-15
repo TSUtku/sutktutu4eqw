@@ -5,20 +5,20 @@ const a = require('../ayarlar.json')
 exports.run = async (bot, message,args) => {
   let logk = message.mentions.channels.first();
   let logkanal = await db.fetch(`klog${message.guild.id}`)
-  const cfx1 = new Discord.RichEmbed()
+  const nms1 = new Discord.RichEmbed()
   .setColor("#00ff88")
   .setDescription(`Kanal Koruma Logu Kapatıldı!`)
   .setFooter(`Nemesis| Kanal Koruma Sistemi.`, bot.user.avatarURL)
-  const cfx2 = new Discord.RichEmbed()
+  const nms2 = new Discord.RichEmbed()
   .setColor("#00ff88")
   .setDescription(`KanalKoruma-Log Seçilmemiş!`)
   .setFooter(`Nemesis| Kanal Koruma Sistemi.`, bot.user.avatarURL)  
-  const cfx3 = new Discord.RichEmbed()
+  const nms3 = new Discord.RichEmbed()
   .setColor("#00ff88")
   .setTitle(`**\`KanalKoruma-Log Bilgi;\`**`)
   .setDescription(`** ** \n**Ayarmak İçin:** \`${a.prefix}kanalkoruma-log #kanal\`\n\n **Kapatmak İçin:** \`${a.prefix}kanalkoruma-log kapat\``)
   .setFooter(`Nemesis| Kanal Koruma Sistemi.`, bot.user.avatarURL)  
-  const cfx4 = new Discord.RichEmbed()
+  const nms4 = new Discord.RichEmbed()
   .setColor("#00ff88")
   .setDescription(`KanalKoruma-Log başarıyla ${logk} olarak ayarlandı`)
   .setFooter(`Nemesis| Kanal Koruma Sistemi.`, bot.user.avatarURL)  
@@ -30,20 +30,20 @@ exports.run = async (bot, message,args) => {
   
   if (args[0] === "sıfırla" || args[0] === "kapat") {
     
-    if(!logkanal) return message.channel.send(cfx2);
+    if(!logkanal) return message.channel.send(nms2);
     
    db.delete(`klog${message.guild.id}`)
-   message.channel.send(cfx1);
+   message.channel.send(nms1);
   
     return
   }
   
-if (!logk) return message.channel.send(cfx3);
+if (!logk) return message.channel.send(nms3);
  
 
    db.set(`klog${message.guild.id}`, logk.id)
 
-message.channel.send(cfx4);
+message.channel.send(nms4);
 
 }
 

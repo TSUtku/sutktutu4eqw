@@ -525,4 +525,73 @@ client.on("guildMemberRemove", async member => {
     })
 })
 
+////kanalkoruma
+client.on("channelDelete", async function(channel) {
+  
+  let logs = await channel.guild.fetchAuditLogs({type: 'CHANNEL_DELETE'});
+  let nmsz = await db.fetch(`kanalkoruma${channel.guild.id}`)
+  let nmsk = await db.fetch(`kanaluyari${channel.guild.member(logs.entries.first().executor).id}`)
+  let nmsrol = await db.fetch(`nmsrol${channel.guild.id}`)
+  let nmsrol2 = await db.fetch(`nmsrol2${channel.guild.id}`)
+  let nmsg = await db.fetch(`klog${channel.guild.id}`)
+  let nmsh = channel.guild.channels.find('id', nmsg)
+  let nmsl = channel.member;
+  if (nmsz == 'Kapalı') return;
+  if (nmsz == 'Açık') {
+    
+
+    
+      db.add(`kanaluyari${channel.guild.member(logs.entries.first().executor).id}`, 1)
+    
+      if (nmsk === null) {
+        let nmsu = new Discord.RichEmbed()
+                  .setTitle(`**Nemesis Kanal Koruma Sistemi**`)
+        .setColor("#00ff88")
+        .setFooter(`Nemesis`)
+        .setDescription(`<@${channel.guild.member(logs.entries.first().executor).id}> Kanal Koruma Sistemi Devrede **Sildiği Kanal:** \`${channel.name}\` **Uyarı (1/3)**`)
+      nmsh.send(nmsu)
+        
+      }
+    if (nmsk === 1) {
+      let nmsu = new Discord.RichEmbed()
+                .setTitle(`**Nemesis Kanal Koruma Sistemi**`)
+        .setColor("#00ff88")
+        .setFooter(`Nemesis`)
+        .setDescription(`<@${channel.guild.member(logs.entries.first().executor).id}> Kanal Koruma Sistemi Devrede. **Sildiği Kanal:** \`${channel.name}\` **Uyarı (2/3)**`)
+     nmsh.send(nmsu)
+      
+    }
+    if (nmsk === 2) {
+
+      
+    let logs = await channel.guild.fetchAuditLogs({type: 'CHANNEL_DELETE'});
+     
+    if(logs.entries.first().executor.bot) return;
+    if (logs.entries.first().executor.id === "497674151251804160") return;
+          if (logs.entries.first().executor.id === "522138336056573972") return;
+      
+      
+    channel.guild.member(logs.entries.first().executor).roles.filter(role => role.name !== "@everyone").array().forEach(role => {
+    channel.guild.member(logs.entries.first().executor).removeRole(channel.guild.roles.get(nmsrol))
+    channel.guild.member(logs.entries.first().executor).removeRole(channel.guild.roles.get(nmsrol2))
+      
+    })
+  
+      db.delete(`kanaluyari${channel.guild.member(logs.entries.first().executor).id}`)
+      
+    const silen = channel.guild.member(logs.entries.first().executor).user  
+    const nmsj = new Discord.RichEmbed()
+          .setTitle(`**Nemesis Kanal Koruma Sistemi**`)
+          .setColor("#00ff88")
+          .setDescription(`\`${channel.name}\` Adlı Kanal Silindi. Silen: \`${silen.tag}\`, Yetkileri Alındı! **Uyarı(3/3)**`)
+          .setFooter(`Nemesis`)
+
+    nmsh.send(nmsj)
+      
+    }
+       
+    }   
+  
+});
+
 client.login(ayarlar.token);
