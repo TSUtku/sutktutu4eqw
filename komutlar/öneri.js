@@ -1,10 +1,18 @@
 const Discord = require('discord.js');
+const db = require('quick.db')
 
-exports.run = function(client, message, args) {
+exports.run = async(client, message, args) => {
+  if (!db.has(`premod_${message.guild.id}`) == true) {
+    
+      
+      return message.channel.send(" Bu sunucuda **premium mod aktif değil**, bu sebepten dolayı premium sunucu kodlarını kullanamazsınız.")
+
+    
+  } else {
 //Komutun Kodları
   const öneri = args.join(' ');
   if(!öneri) return message.channel.send('Ne önereceğim');
-  const oneri_kanal = client.channels.get('654789853187276830');
+  const oneri_kanal = client.channels.get('656179448709906432');
     oneri_kanal.send(
   new Discord.RichEmbed()  
   .setTitle('Bir öneri var')
@@ -15,7 +23,7 @@ exports.run = function(client, message, args) {
   oneri_kanal.send('');
 message.channel.send('**Öneriniz iletildi!**');
 };
-
+}
 exports.conf = {
   enabled: true,//True => Komut açık, False => Komut kapalı 
   guildOnly: false, //True => Sadece Servere Özel, False => Heryerde kullanılabilir

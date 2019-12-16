@@ -1,7 +1,14 @@
 const Discord = require('discord.js');
+const db = require('quick.db')
 
+exports.run = async(client, message, args) => {
+  if (!db.has(`premod_${message.guild.id}`) == true) {
+    
+      
+      return message.channel.send(" Bu sunucuda **premium mod aktif değil**, bu sebepten dolayı premium sunucu kodlarını kullanamazsınız.")
 
-exports.run = function(client, message) {
+    
+  } else {
 const embed = new Discord.RichEmbed()
 .setColor('BLUE')
 .setTitle('Kayıt Sistemi')
@@ -15,6 +22,7 @@ const embed = new Discord.RichEmbed()
 .setTimestamp()
 .setThumbnail(client.user.avatarURL)
 message.channel.send(embed)
+  }
 };
 
 exports.conf = {

@@ -1,7 +1,16 @@
 const Discord = require('discord.js')
 const ayarlar = require('../ayarlar.json')
+const db = require('quick.db')
 
-exports.run = (client, message, args) => {
+
+exports.run = async(client, message, args) => {
+  if (!db.has(`premod_${message.guild.id}`) == true) {
+    
+      
+      return message.channel.send(" Bu sunucuda **premium mod aktif değil**, bu sebepten dolayı premium sunucu kodlarını kullanamazsınız.")
+
+    
+  } else {
   
   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(`Bu komutu kullanabilmek için **Mesajları Yönet** iznine sahip olmalısın!`);
 
@@ -12,6 +21,7 @@ exports.run = (client, message, args) => {
         .addField('Kullanıcı Adı Reklam İçeren Kullanıcılar', memberss.map(member => `${member} = ${member.user.username}`).join("\n") || "Kimsenin kullanıcı adı reklam içermiyor.")
         .setColor("RANDOM")
     message.channel.send({embed})
+}
 }
 
 exports.conf = {

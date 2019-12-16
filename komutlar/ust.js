@@ -4,7 +4,14 @@
 const db = require('quick.db')
 const Discord = require('discord.js')
 
-exports.run = async (bot, message, args) => {
+exports.run = async(client, message, args) => {
+  if (!db.has(`premod_${message.guild.id}`) == true) {
+    
+      
+      return message.channel.send(" Bu sunucuda **premium mod aktif değil**, bu sebepten dolayı premium sunucu kodlarını kullanamazsınız.")
+
+    
+  } else {
  if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Bu komutu kullanmak için`MESAJLARI_YÖNET` yetkisine sahip olmalısın!')
   let kanal = message.mentions.channels.first()
 
@@ -19,7 +26,7 @@ exports.run = async (bot, message, args) => {
   
  
 }
-
+}
 exports.conf = {
   enabled: true,
   guildOnly: false,

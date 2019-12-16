@@ -1,10 +1,16 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-
+const db = require('quick.db')
 var ayarlar = require('../ayarlar.json');
 
+exports.run = async(client, message, args) => {
+  if (!db.has(`premod_${message.guild.id}`) == true) {
+    
+      
+      return message.channel.send(" Bu sunucuda **premium mod aktif değil**, bu sebepten dolayı premium sunucu kodlarını kullanamazsınız.")
 
-exports.run = async (client, message) => {
+    
+  } else {
   
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu komutu kullanabilmek için **Yönetici** iznine sahip olmalısın!`);
 
@@ -35,7 +41,7 @@ exports.run = async (client, message) => {
     
         message.channel.send("Kayıt Sistemi Kapatıldı Artık Komutlarıda Kullanılamaz.")
     
-
+    }
   }
     };
 

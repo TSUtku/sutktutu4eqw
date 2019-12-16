@@ -24,7 +24,7 @@ exports.conf = {
 };
 
 exports.help = {
-    name: 'ekstra',
+    name: 'premiım',
       usage: 'ekstra',
       description: 'ekstra komutlarını gösteir.',
 };

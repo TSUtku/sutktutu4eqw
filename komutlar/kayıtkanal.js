@@ -2,7 +2,14 @@ const Discord = require('discord.js')
 const fs = require('fs');
   const db = require('quick.db');
 
-exports.run = async (client, message, args) => {
+exports.run = async(client, message, args) => {
+  if (!db.has(`premod_${message.guild.id}`) == true) {
+    
+      
+      return message.channel.send(" Bu sunucuda **premium mod aktif değil**, bu sebepten dolayı premium sunucu kodlarını kullanamazsınız.")
+
+    
+  } else {
     let kullanıcı = await db.fetch(`ksistem_${message.guild.id}`);
 
   if( kullanıcı == undefined){
@@ -27,6 +34,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu kom
     .setColor("RANDOM")
     message.channel.send({embed})
 }
+  }
   }
 }
     

@@ -2,7 +2,14 @@ const Discord = require('discord.js');
 const db = require('quick.db')
 const ayarlar = require('../ayarlar.json')
 
-exports.run = async(yashinu, message, args) => {
+exports.run = async(client, message, args) => {
+  if (!db.has(`premod_${message.guild.id}`) == true) {
+    
+      
+      return message.channel.send(" Bu sunucuda **premium mod aktif değil**, bu sebepten dolayı premium sunucu kodlarını kullanamazsınız.")
+
+    
+  } else {
   if(message.author.id !== message.guild.owner.user.id) return message.reply('Bu komut sunucu sahibine özeldir!')
   if(args[0] === "0" || args[0] === "sıfırla") {
     await db.delete(`banlimit_${message.guild.id}`)
@@ -20,7 +27,7 @@ exports.conf = {
   aliases: [],
   permLevel: 0
 };
-
+}
 exports.help = {
   name: 'banlimit',
   description: 'banlimiti koyar koyduğunuz limiti geçen kişilerin tüm yetkisini alır.',
