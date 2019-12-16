@@ -5,7 +5,7 @@ const ayarlar = require('../ayarlar.json')
 
 exports.run = async (client, message, args) => { 
 if(message.author.id !== ayarlar.sahip) return message.channel.send(" Bu komutu sadece geliştiricim kullanabilir.");
-
+   
  const args0 = args[0];
   if(!args0) {
     message.channel.send(message.author.username + ", lütfen bir sunucu **id**'si yaz!")
@@ -14,8 +14,20 @@ if(message.author.id !== ayarlar.sahip) return message.channel.send(" Bu komutu 
 db.set(`premod_${args0}`, "aktif")
   message.channel.send(" Başarıyla premium aktif edildi.")
 }
-  }
-    
+  {
+
+ const args0 = args[0];
+  if(!args0) {
+    message.channel.send(message.author.username + ", lütfen bir sunucu **id**'si yaz!")
+  } else {
+  
+db.set.delete(`premod_${args0}`, "pasif")
+message.channel.send("premium başarıyla alındı")
+ 
+}
+}
+};
+
 exports.conf = {
     enabled: true,
     guildOnly: false,
@@ -25,7 +37,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: 'premiumver',
+    name: 'premium-ver-al',
     description: '',
     usage: '',
 
