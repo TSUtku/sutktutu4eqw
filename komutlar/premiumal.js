@@ -1,3 +1,5 @@
+
+
 const Discord = require('discord.js')
 const fs = require('fs');
 const db = require('quick.db');
@@ -5,16 +7,19 @@ const ayarlar = require('../ayarlar.json')
 
 exports.run = async (client, message, args) => { 
 if(message.author.id !== ayarlar.sahip) return message.channel.send(" Bu komutu sadece geliştiricim kullanabilir.");
-   
+
  const args0 = args[0];
   if(!args0) {
     message.channel.send(message.author.username + ", lütfen bir sunucu **id**'si yaz!")
   } else {
   
-db.set(`premod_${args0}`, "aktif")
-  message.channel.send(" Başarıyla premium aktif edildi.")
+ 
+db.delete(`premod_${args0}`, "pasif")
+message.channel.send("premium başarıyla alındı")
+ 
 }
 };
+
 
 exports.conf = {
     enabled: true,
@@ -25,7 +30,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: 'premiumver',
+    name: 'premiumal',
     description: '',
     usage: '',
 
