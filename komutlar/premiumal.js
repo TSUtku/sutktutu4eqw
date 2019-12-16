@@ -31,7 +31,7 @@ exports.conf = {
 
 exports.help = {
     name: 'premiumal',
-    description: '',
-    usage: '',
+    description: 'premiumal',
+    usage: 'premiumal',
 
 }
