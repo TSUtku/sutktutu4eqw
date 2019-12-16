@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
 
     const juke = new Discord.RichEmbed()
       .setColor('BLUE')
-      .setAuthor(`Nemesis`, client.user.avatarURL) 
+      .setAuthor(`Moderasyon`, client.user.avatarURL) 
       .setDescription('**!yardımkomut  Komut ismi yazarak komutların ne işe yaradığını bulabilirsiniz.**')
 .setTitle('prefix !')
       .setThumbnail(client.user.avatarURL)

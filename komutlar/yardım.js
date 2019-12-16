@@ -8,6 +8,7 @@ const lembed = new Discord.RichEmbed()
 .addField(":robot: !eğlence","eğlence komutlarını atar.")
 .addField(":robot: !ekstra" ,"ekstra komutları gösterir.")
 .addField(":robot: !kullanıcı","Kullanıcı komutları atar.")
+.addField(":robot: !premium","Premium komutları atar.")
 
 .setDescription("genel ve ekstra komutları bakımda")
 message.channel.sendEmbed(lembed)

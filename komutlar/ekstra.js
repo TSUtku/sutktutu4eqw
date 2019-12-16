@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
   
       const juke = new Discord.RichEmbed()
       .setColor('BLUE')
-      .setAuthor(`Eğlence`, client.user.avatarURL) 
+      .setAuthor(`Ekstra`, client.user.avatarURL) 
     .setDescription('**!yardımkomut  Komut ismi yazarak komutların ne işe yaradığını bulabilirsiniz.**')
       .setThumbnail(client.user.avatarURL)
       .addField('**🔥 **','`davet`,`istatislik`, `sunucular` ')

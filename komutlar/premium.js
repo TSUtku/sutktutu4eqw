@@ -5,9 +5,10 @@ exports.run = (client, message, args) => {
   
       const juke = new Discord.RichEmbed()
       .setColor('BLUE')
-      .setAuthor(`Eğlence`, client.user.avatarURL) 
+      .setAuthor(`Premium`, client.user.avatarURL) 
     .setDescription('**!yardımkomut  Komut ismi yazarak komutların ne işe yaradığını bulabilirsiniz.**')
       .setThumbnail(client.user.avatarURL)
+      .addField('**Premium komutları nasıl kullanırsınız Destek sunucumuza gelin :https://discord.gg/cGBr2zV**')
       .addField('**🔥 **','`reklamtaraması`,`banlimit` ')
       .addField('**🔥 **','`öneri`,`ust`, `kayıtsistemi` ')
        .setFooter(``, client.user.avatarURL)
@@ -24,7 +25,7 @@ exports.conf = {
 };
 
 exports.help = {
-    name: 'premiım',
-      usage: 'ekstra',
-      description: 'ekstra komutlarını gösteir.',
+    name: 'premium',
+      usage: 'premium',
+      description: 'premium komutlarını gösteir.',
 };
