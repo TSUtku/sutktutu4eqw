@@ -7,7 +7,7 @@ exports.run = (client, message) => {
   .setTitle("Beni sunucuna davet etmek için tıkla.")
     .setAuthor(message.author.username, message.author.avatarURL)
   .setColor("RANDOM")
-  .setDescription("**Bot yapımıcılari:** <@636666776972820490> <@639430589493018644> <@611624362277077012> ")
+  .setDescription("**Bot yapımıcılari:** <@636666776972820490> <@639430589493018644>")
   .setFooter('Takım : | Endlesslove ekibi | ', client.user.avatarURL)
   .setThumbnail("")
   .setTimestamp()

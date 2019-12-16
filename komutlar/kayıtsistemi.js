@@ -3,6 +3,7 @@ const fs = require('fs');
 
 var ayarlar = require('../ayarlar.json');
 
+
 exports.run = async (client, message) => {
   
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu komutu kullanabilmek için **Yönetici** iznine sahip olmalısın!`);
