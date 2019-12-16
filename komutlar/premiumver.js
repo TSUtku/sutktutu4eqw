@@ -11,7 +11,7 @@ if(message.author.id !== ayarlar.sahip) return message.channel.send(" Bu komutu 
     message.channel.send(message.author.username + ", lütfen bir sunucu **id**'si yaz!")
   } else {
   
-db.set(`premod_${args0}`, "aktif")
+db.set(`premod_${args0}`)
   message.channel.send(" Başarıyla premium aktif edildi.")
 }
 };
