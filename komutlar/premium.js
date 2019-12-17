@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
 
       .setThumbnail(client.user.avatarURL)
  .setDescription('!yardımkomut komut adı yazarak komutların ne işe yaradığını bulabilirsiniz')
-     .addField('**Premium komutları nasıl kullanırsınız Destek sunucumuza gelin : DC LİNK**')
+     .addField('**Premium komutları nasıl kullanırsınız Destek sunucumuza gelin : https://discord.gg/cGBr2zV**')
       .addField('**Premium **','`reklamtaraması`,`öneri` ')
       .addField('**Premum **','`kayıtsistemi`,`banlimit`, `ust` ')
        .setFooter(``, client.user.avatarURL)
