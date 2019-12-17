@@ -1,2 +1,2 @@
-Yakında aktif!!
+Nemesisssssssss
 =================
