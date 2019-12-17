@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
       .setAuthor(`Kullanıcı`, client.user.avatarURL) 
     .setDescription('**!yardımkomut  Komut ismi yazarak komutların ne işe yaradığını bulabilirsiniz.**')
       .setThumbnail(client.user.avatarURL)
-      .addField('**:busts_in_silhouette: **','`öneri`,`havadurumu`, `steamfiyat` ')
+      .addField('**:busts_in_silhouette: **','`havadurumu`, `steamfiyat` ')
       .addField('**:busts_in_silhouette: **','`sunucubilgi`,`sunucuresmi`,`kullanıcıbilgim`,`yetkilerim` ')
        .setFooter(``, client.user.avatarURL)
       .setTimestamp()
