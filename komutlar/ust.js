@@ -36,7 +36,7 @@ exports.conf = {
 
 exports.help = {
   name: 'ust',
-  description: 'Botun pingini gösterir.',
-  usage: ''
+  description: 'bot mesaj silme sistemini açarsınız.',
+  usage: 'ust <aç kapat>'
 };
   
