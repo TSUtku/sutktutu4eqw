@@ -14,7 +14,7 @@ if(message.author.id !== ayarlar.sahip) return message.channel.send(" Bu komutu 
   } else {
   
  
-db.delete(`premod_${args0}`)
+db.delete(`premod_${args0}`,"deaktif")
 message.channel.send("premium başarıyla alındı")
  
 }
