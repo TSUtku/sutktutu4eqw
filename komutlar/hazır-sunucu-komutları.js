@@ -5,10 +5,10 @@ exports.run = (client, message, args) => {
   
       const juke = new Discord.RichEmbed()
       .setColor('BLUE')
-      .setAuthor(`Ekstra`, client.user.avatarURL) 
+      .setAuthor(`Hazır-sunucu`, client.user.avatarURL) 
     .setDescription('**!yardımkomut  Komut ismi yazarak komutların ne işe yaradığını bulabilirsiniz.**')
       .setThumbnail(client.user.avatarURL)
-      .addField('**🔥 **`satış-sunucusu`,`eğlence-sunucusu`, `normal-sunucu` ')
+      .addField('**🔥 **','`satış-sunucusu`,`eğlence-sunucusu`, `normal-sunucu` ')
 
        .setFooter(``, client.user.avatarURL)
       .setTimestamp()
