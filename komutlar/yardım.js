@@ -9,6 +9,7 @@ const lembed = new Discord.RichEmbed()
 .addField(":robot: !ekstra" ,"ekstra komutları gösterir.",true)
 .addField(":robot: !kullanıcı","Kullanıcı komutları atar.",true)
 .addField(":robot: !premium","Premium komutları atar.",true)
+.addField(":robot: !hazır-sunucu-komutları","Hazır sunucu komutlarını atar.",true )
 
 
 message.channel.sendEmbed(lembed)
